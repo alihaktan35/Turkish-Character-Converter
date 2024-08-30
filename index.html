@@ -78,7 +78,7 @@
     <button class="btn" onclick="copyText()">Copy</button>
 
     <div class="footer">
-        <a href="https://ahsdev.com.tr" target="_blank">© 2024 - AHSTR</a> - <a href="https://github.com/alihaktan35" target="_blank">Github</a>
+        <a href="https://ahsdev.com.tr" target="_blank">© 2024 - AHSTR</a> - <a href="https://github.com/alihaktan35" target="_blank">GitHub</a>
     </div>
 
     <script>
@@ -102,7 +102,7 @@
         function copyText() {
             let outputText = document.getElementById('outputText');
             outputText.select();
-            outputText.setSelectionRange(0, 99999); // Mobile uyumlu kopyalama
+            outputText.setSelectionRange(0, 99999);
             document.execCommand("copy");
             alert("Text copied: " + outputText.value);
         }
