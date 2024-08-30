@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>No Turkish Characters</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        .textbox {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            border: 2px solid #fff;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .btn {
+            padding: 10px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .btn:hover {
+            background-color: #ddd;
+        }
+        .btn:active {
+            background-color: #bbb;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>No Turkish Characters</h1>
+
+    <textarea id="inputText" class="textbox" rows="5" placeholder="Enter the text with Turkish characters here..."></textarea>
+    
+    <button class="btn" onclick="convertText()">Convert</button>
+
+    <textarea id="outputText" class="textbox" rows="5" readonly placeholder="The converted text will be shown here..."></textarea>
+
+    <button class="btn" onclick="copyText()">Copy</button>
+
+    <div class="footer">
+        <a href="https://ahsdev.com.tr" target="_blank">© 2024 - AHSTR</a> - <a href="https://github.com/alihaktan35" target="_blank">Github</a>
+    </div>
+
+    <script>
+        function convertText() {
+            let input = document.getElementById('inputText').value;
+            let output = input.replace(/ğ/g, 'g')
+                              .replace(/Ğ/g, 'G')
+                              .replace(/ü/g, 'u')
+                              .replace(/Ü/g, 'U')
+                              .replace(/ş/g, 's')
+                              .replace(/Ş/g, 'S')
+                              .replace(/ç/g, 'c')
+                              .replace(/Ç/g, 'C')
+                              .replace(/ö/g, 'o')
+                              .replace(/Ö/g, 'O')
+                              .replace(/İ/g, 'I')
+                              .replace(/ı/g, 'i');
+            document.getElementById('outputText').value = output;
+        }
+
+        function copyText() {
+            let outputText = document.getElementById('outputText');
+            outputText.select();
+            outputText.setSelectionRange(0, 99999); // Mobile uyumlu kopyalama
+            document.execCommand("copy");
+            alert("Text copied: " + outputText.value);
+        }
+    </script>
+
+</body>
+</html>
