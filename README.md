@@ -1,6 +1,4 @@
 # No Turkish Characters - Turkish Character Converter
-
-## Overview
 **No Turkish Characters** is a web tool designed to convert Turkish characters such as `ğ`, `ü`, `ş`, `ç`, `ö`, `ı`, `İ` into their global counterparts.
 
 ## Usage
